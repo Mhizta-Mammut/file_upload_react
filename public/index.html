@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="theme-color" content="#000000" />
+
+    <title>Shantex</title>
+
+    <style>
+      .files input {
+      outline: 2px dashed #92b0b3;
+      outline-offset: -10px;
+      -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+      transition: outline-offset .15s ease-in-out, background-color .15s linear;
+      padding: 120px 0px 85px 35%;
+      text-align: center !important;
+      margin: 0;
+      width: 100% !important;
+  }
+  .files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+      -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+      transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+   }
+  .files{ position:relative}
+  .files:after {  pointer-events: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 50px;
+      right: 0;
+      height: 56px;
+      content: "";
+      background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+      display: block;
+      margin: 0 auto;
+      background-size: 100%;
+      background-repeat: no-repeat;
+  }
+  .color input{ background-color:#f1f1f1;}
+  .files:before {
+      position: absolute;
+      bottom: 10px;
+      left: 0;  pointer-events: none;
+      width: 100%;
+      right: 0;
+      height: 57px;
+      display: block;
+      margin: 0 auto;
+      color: #2ea591;
+      font-weight: 600;
+      text-transform: capitalize;
+      text-align: center;
+  }
+      </style>
+    
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/mdb.min.css"/>
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/style.css"/>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="root"></div>
+
+    
+
+    <script src="%PUBLIC_URL%/assets/js/jquery.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/popper.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/bootstrap.min.js"></script>
+    <!-- <script src="%PUBLIC_URL%/assets/js/mdb.min.js"></script> -->
+    <script type="text/javascript">
+      var body = $('body');
+      var navigation = $('.navigation');
+      var superfishMenu = $('ul.sf-menu');
+  
+      $(document).ready(function() {
+  
+        // Prevent empty links
+        // ---------------------------------------------------------------------------------------
+        $('a[href=\\#]').on('click', function(event){
+            event.preventDefault();
+        });
+        // Sticky header/menu
+        // ---------------------------------------------------------------------------------------
+        if ($().sticky) {
+            $('.header.fixed').sticky({topSpacing:0});
+            //$('.header.fixed').on('sticky-start', function() { console.log("Started"); });
+            //$('.header.fixed').on('sticky-end', function() { console.log("Ended"); });
+        }
+  
+        // SuperFish menu
+        // ---------------------------------------------------------------------------------------
+        if ($().superfish) {
+            superfishMenu.superfish();
+        }
+        $('ul.sf-menu a').on('click', function(){
+            body.scrollspy('refresh');
+        });
+        // Fixed menu toggle
+        $('.menu-toggle').on('click', function () {
+            if (navigation.hasClass('opened')) {
+                navigation.removeClass('opened').addClass('closed');
+            } else {
+                navigation.removeClass('closed').addClass('opened');
+            }
+        });
+        $('.menu-toggle-close').on('click', function () {
+            if (navigation.hasClass('opened')) {
+                navigation.removeClass('opened').addClass('closed');
+            } else {
+                navigation.removeClass('closed').addClass('opened');
+            }
+        });
+  
+      });
+    </script>
+  </body>
+</html>
