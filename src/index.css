@@ -36,10 +36,3 @@ header,
     height: 1400px;
     }
 }
-
-
-.rgba-gradient {
-    background: -webkit-linear-gradient(98deg, rgba(228, 231, 22, 0.5), rgba(8, 8, 0, 0.5) 100%);
-    background: -webkit-gradient(linear, 98deg, from(rgba(228, 231, 22, 0.5)), to(rgba(8, 8, 0, 0.5)));
-    background: linear-gradient(to 98deg, rgba(228, 231, 22, 0.5), rgba(8, 8, 0, 0.5) 100%);
-  }
